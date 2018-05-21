@@ -1,0 +1,15 @@
+<template name="documentsIndexItem">
+
+  <tr class="documents-index-item">
+    <td>
+    {{#each field in document.schema.fields}}
+      {{field.label}}: {{field.value}};
+    {{/each}}
+    </td>
+    <td class="text-right">
+      <a class="btn btn-sm btn-danger js-delete-document" href="#" role="button">Delete</a>
+    </td>
+  </tr>
+
+</template>
+

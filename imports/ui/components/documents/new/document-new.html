@@ -1,0 +1,51 @@
+<template name="documentNew">
+
+  <div class="document-new">
+    <div class="card">
+      <div class="card-body">
+        <h2>Fill in {{layout.name}}</h2>
+        {{#if Template.subscriptionsReady}}
+        {{#if view }}
+        <form id="documentForm">
+        <div class="container">
+          {{#each row in view.header.rows}}
+            <div class="row">
+              {{#each field in row.columns}}
+                <div class="flex-md-column">
+                  <label>
+                    {{field.label}}
+                    <input class="form-control" id="{{field._id}}"
+                       type="{{field.type}}"
+                       name="{{field.name}}"
+                       data-id="{{field._id}}"
+                       maxlength="{{field.maxLength}}"
+                    />
+                  </label>
+                </div>
+              {{/each}}
+            </div>
+          {{/each}}
+          <div class="row">
+          {{#each button in view.buttons}}
+          <button class="btn btn-primary">
+            {{button}}
+          </button>
+          {{/each}}
+          </div>
+        </div>
+        </form>
+
+        <!--{{#autoForm id="documentView" type="method" meteormethod="documents.create" }}-->
+          <!--<fieldset>-->
+            <!--{{> afQuickField name=}} {{> afQuickField name='content' rows=6}}-->
+          <!--</fieldset>-->
+          <!--<button type="submit" class="btn btn-primary">Create</button>-->
+          <!--<a class="btn btn-link" role="button" href="{{pathFor 'documentsIndex'}}">Back</a>-->
+        <!--{{/autoForm}}-->
+        {{/if}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+</template>

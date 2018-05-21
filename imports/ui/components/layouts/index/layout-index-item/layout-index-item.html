@@ -1,0 +1,10 @@
+<template name="layoutIndexItem">
+
+  <tr class="layout-index-item">
+    <td>{{layout.name}}</td>
+    <td class="text-right">
+      <a class="btn btn-primary" href="{{pathFor 'documentNew' layoutId=layout._id}}" role="button">Fill in</a>
+    </td>
+  </tr>
+
+</template>
